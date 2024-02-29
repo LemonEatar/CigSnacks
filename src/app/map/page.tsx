@@ -68,3 +68,6 @@ function App() {
 
 export default App;
 */
+export default function Page() {
+  return <div>suck my dick</div>;
+}
