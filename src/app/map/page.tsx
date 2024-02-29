@@ -1,13 +1,68 @@
-export default function Page() {
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+// Define custom icon for markers
+const customIcon = new L.Icon({
+  iconUrl: "marker-icon.png",
+  iconRetinaUrl: "marker-icon-2x.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: "marker-shadow.png",
+  shadowSize: [41, 41],
+  shadowAnchor: [12, 41],
+});
+
+function App() {
+  const positions = [
+    { lat: 48.1375, lng: 11.3625, label: "Cigarets" }, // Central Germering
+    { lat: 48.135, lng: 11.365, label: "Snacks" }, // East Germering
+    { lat: 48.139, lng: 11.36, label: "Farmer Market" }, // West Germering
+  ];
+  const [mapCenter, setMapCenter] = useState([48.1364, 11.3974]);
+
+  useEffect(() => {
+    // Get user's current location
+    if ("geolocation" in navigator) {
+      try {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          setMapCenter([latitude, longitude]);
+        });
+      } catch (error) {
+        console.error("Error getting geolocation:", error);
+      }
+    } else {
+      console.error("Geolocation is not supported by your browser.");
+    }
+  }, []);
   return (
-    <div className="flex">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34727.772383258474!2d11.327743083522902!3d48.120058651200104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1706779750630!5m2!1sde!2sde"
-        width="600"
-        height="450"
-        className="border-0 w-full h-screen"
-        loading="lazy"
-      ></iframe>
+    <div className="App">
+      <MapContainer
+        center={mapCenter}
+        zoom={15}
+        style={{ height: "1800px", width: "100%" }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {positions.map((position, index) => (
+          <Marker
+            key={index}
+            position={[position.lat, position.lng]}
+            icon={customIcon}
+          >
+            <Popup>{position.label}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   );
 }
+
+export default App;
