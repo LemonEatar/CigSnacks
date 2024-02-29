@@ -1,10 +1,9 @@
-
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="h-screen flex justify-center ">
-      <div className="w-full max-w-md">
+      <div className="w-full ">
         <div className="bg-[#91a3b0] py-4 px-5 flex justify-evenly rounded-full">
           <div className="px-4">
             <Link href="https://www.youtube.com/@Cigsnacks">YouTube</Link>
@@ -23,7 +22,12 @@ export default function Home() {
             </div>
             <div className="pt-24 flex justify-center">
               <div className="p-5 border-4 rounded-full border-black">
-                <Link href="/map" className="bg-[#91a3b0] p-3 rounded-full text-2xl font-semibold">Get Started</Link>
+                <Link
+                  href="/map"
+                  className="bg-[#91a3b0] p-3 rounded-full text-2xl font-semibold"
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>
@@ -32,4 +36,3 @@ export default function Home() {
     </div>
   );
 }
-
