@@ -8,6 +8,13 @@
       "when": 1708860267347,
       "tag": "0000_soft_tinkerer",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1709815505372,
+      "tag": "0001_curly_shinko_yamashiro",
+      "breakpoints": true
     }
   ]
 }

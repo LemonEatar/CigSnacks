@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="bg-black h-1 " />
-      <div className="bg-[#91a3b0] flex justify-evenly">
+      <div className="bg-[#ECDEC9] flex justify-evenly">
         <Link href="/search">
           <button className="flex">
             <SearchIcon className="w-14 h-14" />

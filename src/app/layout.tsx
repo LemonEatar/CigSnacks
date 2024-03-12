@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="h-full bg-[#C1B6A4] relative">
+      <body className="h-full bg-[#ABBA99] static">
         <div>{children}</div>
         <footer className="bottom-0 w-full fixed">
           <Footer />

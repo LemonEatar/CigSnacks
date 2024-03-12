@@ -1,0 +1,1 @@
+ALTER TABLE "maschine" ADD COLUMN "location" text;

@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="h-screen flex justify-center ">
       <div className="w-full ">
-        <div className="bg-[#91a3b0] py-4 px-5 flex justify-evenly rounded-full">
+        <div className="bg-[#889EA7] py-4 px-5 flex justify-evenly rounded-full">
           <div className="px-4">
             <Link href="https://www.youtube.com/@Cigsnacks">YouTube</Link>
           </div>
@@ -24,7 +24,7 @@ export default function Home() {
               <div className="p-5 border-4 rounded-full border-black">
                 <Link
                   href="/map"
-                  className="bg-[#91a3b0] p-3 rounded-full text-2xl font-semibold"
+                  className="bg-[#889EA7] p-3 rounded-full text-2xl font-semibold"
                 >
                   Get Started
                 </Link>

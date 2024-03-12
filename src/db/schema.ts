@@ -1,3 +1,4 @@
+import { varchar } from "drizzle-orm/mysql-core";
 import { integer, pgTable, serial, text } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
@@ -6,6 +7,7 @@ export const maschien = pgTable("maschine", {
   kind: text("kind"),
   cord: text("cord"),
   filled: integer("filled"),
+  location: text("location"),
   ownerId: serial("ownerId").references(() => owner.id),
 });
 

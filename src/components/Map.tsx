@@ -11,20 +11,23 @@ const customIcon = new L.Icon({
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
-  shadowUrl: "/marker-shadow.png", 
+  shadowUrl: "/marker-shadow.png",
   shadowSize: [41, 41],
   shadowAnchor: [12, 41],
 });
 
-
-const Map = ({positions}: {positions:{
+const Map = ({
+  positions,
+}: {
+  positions: {
     lat: number;
     lng: number;
     label: string;
-}[]}
-) => {
-
-  const [mapCenter, setMapCenter] = useState<LatLngExpression>([48.1364, 11.3974]);
+  }[];
+}) => {
+  const [mapCenter, setMapCenter] = useState<LatLngExpression>([
+    48.1364, 11.3974,
+  ]);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -35,7 +38,7 @@ const Map = ({positions}: {positions:{
         },
         (error) => {
           console.error("womp wopmp, error:", error);
-        }
+        },
       );
     } else {
       console.error("bruv dein browser hat keine geolocation");
@@ -43,8 +46,12 @@ const Map = ({positions}: {positions:{
   }, []);
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
-      <MapContainer center={mapCenter} zoom={13} style={{ height: "100%", width: "100%" }}>
+    <div style={{ height: "93.1vh", width: "100%" }}>
+      <MapContainer
+        center={mapCenter}
+        zoom={13}
+        style={{ height: "100%", width: "100%" }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
