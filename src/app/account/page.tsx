@@ -57,7 +57,7 @@ export default function Page() {
                 href="#!"
                 className="text-primary focus:outline-none dark:text-primary-400"
               >
-                Forgot password?
+                {" Forgot password? "}
               </a>
             </div>
 
@@ -71,7 +71,7 @@ export default function Page() {
             </button>
 
             <p className="mt-6 text-center">
-              Not a member?
+              {"Not a member? "}{" "}
               <a
                 href="#!"
                 className="text-primary focus:outline-none dark:text-primary-400"

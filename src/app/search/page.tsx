@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 import { filterMachine } from "../actions";
 import { useState } from "react";
 
@@ -47,4 +47,8 @@ export default function Page() {
       </div>
     </div>
   );
+}
+*/
+export default function Page() {
+  return <div>Seba ist ein HS</div>;
 }
