@@ -15,7 +15,7 @@ export default function Footer() {
             <SearchIcon className="w-14 h-14" />
           </button>
         </Link>{" "}
-        <Link href="/account">
+        <Link href="/favourites">
           <button className="text-2xl flex">
             <StarOutlineIcon className="w-14 h-14" />
           </button>

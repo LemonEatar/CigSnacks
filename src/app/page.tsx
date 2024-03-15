@@ -14,10 +14,10 @@ export default function Home() {
         </div>
         <div className="flex justify-center h-full items-center">
           <div className="pb-16">
-            <div className="flex justify-center text-8xl font-impact font-bold pb-5 pt-5">
+            <div className="flex justify-center sm:text-8xl text-3xl font-impact font-bold pb-5 pt-5">
               CigSnacks
             </div>
-            <div className="flex font-semibold font-impact justify-center text-3xl">
+            <div className="flex font-semibold font-impact justify-center text-2xl">
               - The Easiest Way to find Snacks -
             </div>
             <div className="pt-24 flex justify-center">
