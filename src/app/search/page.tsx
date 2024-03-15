@@ -1,18 +1,9 @@
-/*"use client";
+"use client";
 import { filterMachine } from "../actions";
 import { useState } from "react";
 
 export default function Page() {
   const [foodChoice, setFoodChoice] = useState("cigarettes");
-  const [maschines, setMaschines] = useState([
-    {
-      id: 2,
-      kind: "snacks",
-      cord: "(51.0551, 51.222)",
-      filled: 1,
-      ownerId: 1,
-    },
-  ]);
 
   return (
     <div className="w-full h-full mx-auto py-5 w-16">
@@ -36,19 +27,13 @@ export default function Page() {
             Farmers Market
           </option>
         </select>
-        <button className="px-2 py-2" onClick={() => filterMachine(foodChoice)}>
-          Suchen
-        </button>
+        <button className="px-2 py-2">Suchen</button>
       </div>
       <div className="py-5">
-        {filterMachine(foodChoice).then((val) =>
-          val.map((item) => <div key={item.id}>{item.kind}</div>),
-        )}
+        <div className="border border-5 border-black w-64">
+          {foodChoice.toUpperCase()}, Germering
+        </div>
       </div>
     </div>
   );
-}
-*/
-export default function Page() {
-  return <div>Seba ist ein HS</div>;
 }
